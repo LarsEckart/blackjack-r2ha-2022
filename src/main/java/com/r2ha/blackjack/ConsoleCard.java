@@ -24,4 +24,8 @@ public class ConsoleCard {
                                     .cursorLeft(11)
                                     .toString(), lines);
     }
+
+    public static String displayFaceUpCard(Hand hand) {
+        return display(hand.dealerFaceUpCard());
+    }
 }
