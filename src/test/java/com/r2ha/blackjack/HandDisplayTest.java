@@ -24,7 +24,7 @@ public class HandDisplayTest {
                 new Card(Suit.CLUBS, Rank.JACK));
         Hand hand = new Hand(cards);
 
-        Approvals.verify(hand.cardsAsString());
+        Approvals.verify(ConsoleCard.cardsAsString(hand));
     }
 
 }
