@@ -1,6 +1,5 @@
 package com.r2ha.blackjack.adapter.in.console;
 
-import com.r2ha.blackjack.adapter.in.console.ConsoleCard;
 import com.r2ha.blackjack.domain.Card;
 import com.r2ha.blackjack.domain.Hand;
 import com.r2ha.blackjack.domain.Rank;
@@ -19,7 +18,7 @@ public class HandDisplayTest {
                 new Card(Suit.CLUBS, Rank.JACK));
         Hand hand = new Hand(cards);
 
-        Approvals.verify(ConsoleCard.displayFaceUpCard(hand));
+        Approvals.verify(ConsoleHand.displayFaceUpCard(hand));
     }
 
     @Test
@@ -29,7 +28,7 @@ public class HandDisplayTest {
                 new Card(Suit.CLUBS, Rank.JACK));
         Hand hand = new Hand(cards);
 
-        Approvals.verify(ConsoleCard.cardsAsString(hand));
+        Approvals.verify(ConsoleHand.cardsAsString(hand));
     }
 
 }

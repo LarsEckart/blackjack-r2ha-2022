@@ -1,11 +1,8 @@
 package com.r2ha.blackjack.adapter.in.console;
 
 import com.r2ha.blackjack.domain.Card;
-import com.r2ha.blackjack.domain.Hand;
 import com.r2ha.blackjack.domain.Rank;
 import org.fusesource.jansi.Ansi;
-
-import java.util.stream.Collectors;
 
 import static org.fusesource.jansi.Ansi.ansi;
 
@@ -30,14 +27,4 @@ public class ConsoleCard {
                                     .toString(), lines);
     }
 
-    public static String displayFaceUpCard(Hand hand) {
-        return display(hand.dealerFaceUpCard());
-    }
-
-    public static String cardsAsString(Hand hand) {
-        return hand.cards().stream()
-                .map(ConsoleCard::display)
-                .collect(Collectors.joining(
-                        ansi().cursorUp(6).cursorRight(1).toString()));
-    }
 }

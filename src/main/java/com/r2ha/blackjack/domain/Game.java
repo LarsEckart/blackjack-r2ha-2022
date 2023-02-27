@@ -1,6 +1,6 @@
 package com.r2ha.blackjack.domain;
 
-import com.r2ha.blackjack.adapter.in.console.ConsoleCard;
+import com.r2ha.blackjack.adapter.in.console.ConsoleHand;
 import org.fusesource.jansi.Ansi;
 import org.fusesource.jansi.AnsiConsole;
 
@@ -131,14 +131,14 @@ public class Game {
     private void displayGameState() {
         System.out.print(ansi().eraseScreen().cursor(1, 1));
         System.out.println("Dealer has: ");
-        System.out.println(ConsoleCard.displayFaceUpCard(dealerHand));
+        System.out.println(ConsoleHand.displayFaceUpCard(dealerHand));
 
         // second card is the hole card, which is hidden, or "face down"
         displayBackOfCard();
 
         System.out.println();
         System.out.println("Player has: ");
-        System.out.println(ConsoleCard.cardsAsString(playerHand));
+        System.out.println(ConsoleHand.cardsAsString(playerHand));
         System.out.println(" (" + playerHand.value() + ")");
     }
 
@@ -159,12 +159,12 @@ public class Game {
     private void displayFinalGameState() {
         System.out.print(ansi().eraseScreen().cursor(1, 1));
         System.out.println("Dealer has: ");
-        System.out.println(ConsoleCard.cardsAsString(dealerHand));
+        System.out.println(ConsoleHand.cardsAsString(dealerHand));
         System.out.println(" (" + dealerHand.value() + ")");
 
         System.out.println();
         System.out.println("Player has: ");
-        System.out.println(ConsoleCard.cardsAsString(playerHand));
+        System.out.println(ConsoleHand.cardsAsString(playerHand));
         System.out.println(" (" + playerHand.value() + ")");
     }
 
