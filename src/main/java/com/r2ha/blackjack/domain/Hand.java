@@ -1,4 +1,4 @@
-package com.r2ha.blackjack;
+package com.r2ha.blackjack.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +39,7 @@ public class Hand {
     }
 
 
-    boolean dealerMustDrawCard() {
+    public boolean dealerMustDrawCard() {
         return value() <= 16;
     }
 
@@ -51,15 +51,15 @@ public class Hand {
         cards.add(deck.draw());
     }
 
-    boolean isBusted() {
+    public boolean isBusted() {
         return value() > 21;
     }
 
-    boolean pushes(Hand hand) {
+    public boolean pushes(Hand hand) {
         return hand.value() == value();
     }
 
-    boolean beats(Hand hand) {
+    public boolean beats(Hand hand) {
         return hand.value() < value();
     }
 
